@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <video src="video.mp4" 
-        poster="image.jpg" 
-        width="255" 
-        controls 
-        autoplay>
+    <video src="video.mp4" poster="image.jpg" width="255" controls>
     </video>
 
-   <audio src="audio.mp3" controls></audio>
-    <p>Video and audio elements are used to embed media in web pages.</p>
-    <p>Make sure to provide appropriate sources for the video and audio files.</p>
+    <audio src="audio.mp3" controls></audio>
+
+    <div>
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/XZwBNDGuWGU?si=ZarMd46RmCQqBVNs&amp;start=805"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div>
+        <iframe src="https://www.wikipedia.org" width="1000" height="600"></iframe>
+    </div>
 </body>
+
 </html>
