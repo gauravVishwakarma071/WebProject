@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page is a form, for examinatons">
+    <title>Exam Form</title>
+</head>
+
+<body>
+    <div>
+        <h2>Alpha exam application form.</h2>
+    </div>
+
+    <form action="post">
+        <div>
+            <div>
+                <label for="fullname">Enter your fullname:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your fullname">
+            </div>
+            <div>
+                <label for="fullname">Enter your cousre:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your cousre">
+            </div>
+            <div>
+                <label for="fullname">Enter your age:</label>
+                <input type="number" id="fullname" name="fullname" placeholder="Enter your age" max="30">
+            </div>
+        </div>
+
+        <div>
+            <h5></h5>
+            <div><span>Select your gender</span></div>
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="Female">
+            <label for="Female">Female</label>
+            <input type="radio" name="gender" id="other">
+            <label for="other">Other</label>
+        </div>
+
+
+        <div>
+            <h5></h5>
+            <div>Select subjects</div>
+            <input type="checkbox" name="home" id="cpp">
+            <label for="cpp">C++</label>
+            <br>
+            <input type="checkbox" name="home" id="java">
+            <label for="java">java</label>
+            <br>
+            <input type="checkbox" name="home" id="py">
+            <label for="py">Python</label>
+        </div>
+
+        <div>
+            <br>
+            <label for="cast">Enter your cast</label>
+            <select name="cast" id="cast">
+                <option value="hindu">OBC</option>
+                <option value="hindu">General</option>
+                <option value="hindu">SC/ST</option>
+            </select>
+        </div>
+
+        <div>
+            <br>
+            <label for="about"> Describle about yourself:</label>
+            <br><textarea name="about" id="about" rows="5" cols="52" placeholder="comment here..."></textarea>
+        </div>
+    </form>
+
+</body>
+
+</html>
