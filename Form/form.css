@@ -1,0 +1,11 @@
+.red{
+    background-color: aqua;
+    color: red;
+    font-weight: bold;   
+}
+
+.green{
+    background-color: green;
+    color: rgb(198, 212, 34);
+    font-weight: bold;
+}
