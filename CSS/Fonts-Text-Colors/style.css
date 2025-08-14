@@ -23,7 +23,7 @@ h1 {
 p {
     font-family: 'Baloo bhai 2', 'segoe ui';
     font-size: x-large;
-    color: brown;
+    color: rgb(239, 62, 62);
     padding: 10px;
     font-weight: bold;
 }
