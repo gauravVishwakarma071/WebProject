@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* Element selector */
+        div{
+            color:blue;
+        }
+        /* Class selector */
+        .gray{
+            color:rgb(223, 9, 9);
+        }
+        /* Id selector */
+        #orange{
+            color:rgb(235, 120, 32);
+        }
+        /* Child selector */
+        div > p{
+            color:rgb(192, 54, 111);
+        }
+        /* Descendant selector */
+        div p{
+            color:rgb(13, 217, 98);
+        }
+        /* Universal selector */
+        *{
+            margin: 0cm;
+            padding: 0cm;
+            /* background-color: brown; */
+        }
+        /* Attribute selector */
+        a[href] {
+            color: rgb(0, 0, 255);
+        }
+        /* Pseudo-class selector */
+        a:visited {
+            color: rgb(255, 0, 0);
+        } 
+        a:active {
+            color: rgb(0, 255, 0);
+        }
+        a:hover {
+            background-color: rgb(19, 5, 98);
+        }
+        
+    </style>
+</head>
+<body>
+    <div> Element selector</div>
+    <div class="gray"> Class selector</div>
+    <div id="orange"> Id selector</div>
+    <div><article><p>child selector</p></article></div>
+
+    <a href="https://www.google.com" target="_blank"> go to Google</a>
+    <a href="https://www.facebook.com"> go to facebook</a>
+    <a href="https://www.jio.com"> go to Jio</a>
+    
+</body>
+</html>
