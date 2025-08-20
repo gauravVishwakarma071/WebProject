@@ -1,9 +1,20 @@
-div p{
+div > :first-child{
     background-color: rgb(232, 232, 32);
     color: red;
 }
 div > p{
     background-color: rgb(52, 32, 232);
     color: rgb(246, 243, 243);
+}
+
+h1{
+    background-color: rgb(64, 64, 205);
+    text-shadow: 23;
+    font-style: normal;
+    text-transform: capitalize;
+    text-align: center;   
+}
+h5{
+    text-align: center;
 }
 
