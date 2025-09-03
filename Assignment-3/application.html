@@ -8,50 +8,69 @@
 </head>
 
 <body>
-    <main align="center">
-        <fieldset height="200" weight="400">
-            <table>
-                <tr>
-                    <h1><u>Application form</u></h1>
-                    <fieldset align="left">
-                        <form action="sdfdd.url">
-                            <div><label>Name : <input name="name" type="text" placeholder="enter name" required></label>
-                            </div>
-                            <div><label>Father's Name : <input type="text" placeholder="enter father's name" required></label>
-                            </div>
-                            <div><label>Email : <input type="email" placeholder="enter email" required></label>
-                            </div>
-                            <div><label>Adhaar : <input type="number" placeholder="enter adhaar no*" required></label>
-                            </div>
-                            <div><label>Mobile : <input type="text" placeholder="enter name" required></label>
-                            </div>
+    <fieldset align="center">
+        <header>
+            <h1><u>Job Application Form</u></h1>
+        </header>
+        <main>
+            <fieldset align="left">
+                <form action="sdfdd.url">
+                    <div><label>Name : <input name="name" type="text" placeholder="enter name" required></label>
+                    </div>
+                    <div><label>Father's Name : <input type="text" placeholder="enter father's name" required></label>
+                    </div>
+                    <div><label>Email : <input type="email" placeholder="enter email" required></label>
+                    </div>
+                    <div><label>Adhaar : <input type="number" placeholder="enter adhaar no*" required></label>
+                    </div>
+                    <div><label>Mobile : <input type="number" placeholder="enter name" required></label>
+                    </div>
 
-                            <div>
-                                <label>Address-1: <br>
-                                    <textarea placeholder="permanent address..." rows="3"></textarea>
-                                </label>
-                            </div>
-                            <div>
-                                <label>Address-2: <br>
-                                    <textarea placeholder="Current address..." rows="3"></textarea>
-                                </label>
-                            </div>
-                            <div>
-                                <label for="designation">Designation
-                                    <select id="designation">
-                                        <option value="general">Gen</option>
-                                        <option value="general">OBC</option>
-                                        <option value="general">SC/ST</option>
-                                    </select>
-                                </label>
-                            </div>
-                        </form>
-                    </fieldset>
-                </tr>
-            </table>
+                    <div>
+                        <label><input name="gender" type="radio" value="male">Male</label>
+                        <label><input name="gender" type="radio" value="male">Female</label>
+                        <label><input name="gender" type="radio" value="male">Other</label>
+                    </div>
 
-        </fieldset>
-    </main>
+                    <div>
+                        <label>Address-1: <br>
+                            <textarea placeholder="permanent address..." rows="3"></textarea>
+                        </label>
+                    </div>
+                    <div>
+                        <label>Address-2: <br>
+                            <textarea placeholder="Current address..." rows="3"></textarea>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="designation">Designation
+                            <select id="designation">
+                                <option value="general">Experienced</option>
+                                <option value="general">Fresher</option>
+                                <option value="general">Student</option>
+                            </select>
+                        </label>
+                        <label for="category">Category
+                            <select id="designation">
+                                <option value="general">Gen</option>
+                                <option value="general">OBC</option>
+                                <option value="general">ST/SC</option>
+                            </select>
+                        </label>
+                    </div>
+                </form>
+            </fieldset>
+        </main>
+        <footer>
+            <div>
+                <p>The information given above is true and verified</p>
+                <label for="read">Read :<input type="checkbox"></label>
+                <label for="read">Agree :<input type="checkbox"></label>
+            </div>
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
+        </footer>
+    </fieldset>
 </body>
 
 </html>
