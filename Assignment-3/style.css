@@ -1,0 +1,31 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+fieldset{
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    background-color:rgb(160, 182, 178);
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 1px 8px;
+}
+
+#mainHeading{
+    font-style: normal;
+    text-align: center;
+    color: #262222;
+}
+
+label{
+    display: block;
+    width: 200px;
+    margin-top: 15px;
+    font-weight: bolder;
+}
+input,select,textarea{
+    width: 95%;
+}
