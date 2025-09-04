@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <fieldset>
+    <fieldset class="outer-container">
         <header>
             <h2 id="mainHeading"><u>Job Application Form</u></h2>
         </header>
         <main>
-            <fieldset>
+            <fieldset class="inner-container">
                 <form>
                     <section class="details">
                         <label for="name">Name :</label>
@@ -27,12 +27,13 @@
                         <input id="adhaar" type="number" placeholder="enter your adhaar" required>
                         <label for="mobile">Mobile :</label>
                         <input id="mobile" type="number" placeholder="enter your mobile" required>
-                        <section class=" details gender">
-                            <label for="radio">Male</label>
+                        <label id="gender">Select your gender :</label>
+                        <section class="gender">
+                            <label for="male">Male</label>
                             <input type="radio" name="gender" id="male">
-                            <label for="gender">Femae</label>
+                            <label for="female">Female</label>
                             <input type="radio" name="gender" id="female">
-                            <label for="gender">Other</label>
+                            <label for="other">Other</label>
                             <input type="radio" name="gender" id="other">
                         </section>
                         <label for="addres-1">Permanent address :</label>
@@ -59,12 +60,14 @@
             </fieldset>
         </main>
 
-        <footer>
-            <p>The information given above is true and verified.</p>
-            <label for="readAgree">Read and Agree :</label>
-            <input type="checkbox" required name="readAgree" id="readAgree">
-            <input type="submit">
-            <input type="reset">
+        <footer align="center">
+            <section>
+                <p>The information given above is true and verified.</p>
+                <label for="readAgree">Read and Agree :</label>
+                <input type="checkbox" required name="readAgree" id="readAgree">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </section>
             </form>
         </footer>
     </fieldset>
