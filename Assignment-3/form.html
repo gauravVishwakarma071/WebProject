@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body>
+    <fieldset>
+        <header>
+            <h2 id="mainHeading"><u>Job Application Form</u></h2>
+        </header>
+        <main>
+            <fieldset>
+                <form>
+                    <section class="details">
+                        <label for="name">Name :</label>
+                        <input id="name" type="text" placeholder="enter your name" required>
+                        <label for="father-name">Father's Name :</label>
+                        <input id="father-name" type="text" placeholder="enter Father's name" required>
+                        <label for="email">Email :</label>
+                        <input id="email" type="text" placeholder="enter your email" required>
+                        <label for="adhaar">Adhaar :</label>
+                        <input id="adhaar" type="number" placeholder="enter your adhaar" required>
+                        <label for="mobile">Mobile :</label>
+                        <input id="mobile" type="number" placeholder="enter your mobile" required>
+                        <section class=" details gender">
+                            <label for="radio">Male</label>
+                            <input type="radio" name="gender" id="male">
+                            <label for="gender">Femae</label>
+                            <input type="radio" name="gender" id="female">
+                            <label for="gender">Other</label>
+                            <input type="radio" name="gender" id="other">
+                        </section>
+                        <label for="addres-1">Address-(permanent) :</label>
+                        <textarea name="addres-1" id="addres-1" rows="3"
+                            placeholder=" enter your permanent..."></textarea>
+                        <label for="addres-2">Address-(current) :</label>
+                        <textarea name="addres-2" id="addres-2" rows="3"
+                            placeholder=" enter your current..."></textarea>
+                        <label for="designation">Category:</label>
+                        <select name="category" id="category">
+                            <option value="select">Select</option>
+                            <option value="general">Gen</option>
+                            <option value="obc">OBC</option>
+                            <option value="st/sc">ST/SC</option>
+                        </select>
+                        <label for="designation">Designation :</label>
+                        <select name="designation" id="designation">
+                            <option value="select">Select</option>
+                            <option value="general">Experienced</option>
+                            <option value="obc">Freasher</option>
+                            <option value="st/sc">Student</option>
+                        </select>
+                    </section>
+            </fieldset>
+        </main>
+
+        <footer>
+            <p>The information given above is true and verified.</p>
+            <label for="readAgree">Read and Agree :</label>
+            <input type="checkbox" required name="readAgree" id="readAgree">
+            <input type="submit">
+            <input type="reset">
+            </form>
+        </footer>
+    </fieldset>
+</body>
+
+</html>
