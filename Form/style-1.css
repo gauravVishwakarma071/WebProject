@@ -1,16 +1,16 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 10px;
+    padding: 0%;
 }
 
 .outer-container{
     border: 2px solid #bec4ee;
     border-radius: 10px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
     background-color: rgb(160, 182, 178);
-    max-width: 800px;
+    width: 85%;
     margin: auto;
     box-shadow: 0 1px 8px;
 }
