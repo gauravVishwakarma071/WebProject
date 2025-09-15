@@ -11,17 +11,15 @@ h1, h2, p {
   background-color: burlywood;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .item p {
   display: inline-block;
 }
 
-.flavor {
-  text-align: left;
-  width: 75%;
-}
-.dessert {
+.flavor, .dessert {
   text-align: left;
   width: 75%;
 }
