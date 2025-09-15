@@ -21,6 +21,10 @@ h1, h2, p {
   text-align: left;
   width: 75%;
 }
+.dessert {
+  text-align: left;
+  width: 75%;
+}
 
 .price {
   text-align: right;
