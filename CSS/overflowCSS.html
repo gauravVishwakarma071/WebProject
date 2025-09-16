@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Overflow Example</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      margin: 15px;
+      padding: 10px;
+      background-color: #f0f0f0;
+    }
+
+    .visible {
+      overflow: visible;
+    }
+
+    .hidden {
+      overflow: hidden;
+    }
+
+    .scroll {
+      overflow: scroll;
+    }
+
+    .auto {
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Overflow Property Example</h2>
+
+  <h3>Overflow: visible (default)</h3>
+  <div class="box visible">
+    This is some long content that will not fit inside the box. 
+    It will overflow and still be visible outside of the box boundary.
+    Extra text just to make it overflow and show the difference clearly.
+  </div>
+
+  <h3>Overflow: hidden</h3>
+  <div class="box hidden">
+    This is some long content that will not fit inside the box. 
+    The extra text is clipped and cannot be seen. 
+    You cannot scroll to read more.
+  </div>
+
+  <h3>Overflow: scroll</h3>
+  <div class="box scroll">
+    This is some long content that will not fit inside the box. 
+    Scrollbars will always appear, even if the content fits. 
+    Add more text so that it clearly overflows and requires scrolling.
+  </div>
+
+  <h3>Overflow: auto</h3>
+  <div class="box auto">
+    This is some long content that will not fit inside the box. 
+    Scrollbars will appear only if needed. 
+    Add more text so that it clearly overflows and requires scrolling.
+  </div>
+
+</body>
+</html>
