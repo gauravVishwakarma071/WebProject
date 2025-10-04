@@ -17,4 +17,4 @@ img.width = "200";
 
 //p-tag
 let p = document.querySelector("p");
-p.removeAttribute("");
+p.innerText = "kyu nahi padi bhai!";
