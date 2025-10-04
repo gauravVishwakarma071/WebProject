@@ -15,7 +15,12 @@
 
     <h1 class="abcd">Hello everyone!</h1>
 
-    
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
     <script>
         let h1 = document.querySelector("h1");
         //adding CSS through JS.
@@ -24,6 +29,12 @@
 
         //adding class
         h1.classList = "hulu";
+
+        //using querySelectorAll
+        let ol = document.querySelectorAll("li");
+        li.forEach(element => {
+           console.log(val); 
+        });
     </script>
 </body>
 </html>
