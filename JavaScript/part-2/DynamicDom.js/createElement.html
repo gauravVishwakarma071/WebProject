@@ -13,10 +13,24 @@
         <h1>text 2</h1>
         <h1>text 3</h1>
     </div>
+
+    <ul>
+        <li>task 1</li>
+        <li>task 2</li>
+        <li>task 3</li>
+    </ul>
     <script>
+
+        //creating elements.
         let h1 = document.createElement("h1");
         h1.textContent =  "Mai bahar se aaya hu";
         document.querySelector("div").appendChild(h1);
+
+        //craete a new list item and add to the UL.
+        let ul = document.querySelector("ul");
+        let li = document.createElement("li");
+        li.textContent = "hyy I'm new task";
+        ul.appendChild(li);
     </script>
 </body>
 </html>
