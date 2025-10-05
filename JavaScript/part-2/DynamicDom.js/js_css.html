@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS to CSS changes</title>
     <style>
-        .hulu{
-            color:red;
+        .hulu {
+            color: red;
             background-color: green;
         }
     </style>
 </head>
+
 <body>
 
     <h1 class="abcd">Hello everyone!</h1>
@@ -21,7 +23,21 @@
         <li>item 3</li>
         <li>item 4</li>
     </ul>
-    <script>
+
+    <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ddnTDBOoRdfX8CLUctbuaw.png" alt="picture">
+
+    <!-- setting url to anchor tag via JS -->
+    <a href="">goggle</a>
+
+    <!--adding tittle at div->textContent -->
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magnam iusto ipsam dolorum quod. Sint nisi, maiores ex at quisquam impedit atque eaque.</div>
+
+    <!-- removing disable attribute from a buttom -->
+    <button disabled>Download Now</button>
+
+
+    
+    <script>////////////////////////////////////////////////////////////////////////
         let h1 = document.querySelector("h1");
         //adding CSS through JS.
         // h1.style.color = "green";
@@ -31,10 +47,42 @@
         h1.classList = "hulu";
 
         //using querySelectorAll
-        let ol = document.querySelectorAll("li");
+        let li = document.querySelectorAll("li");
+
         li.forEach(element => {
-           console.log(val); 
+            console.log(element.textContent);
         });
+
+        //accessing every element of OL tag.
+        for (let i = 0; i < li.length; i++) {
+            console.log(li[i].textContent);
+        }
+
+        //manipulating Image.
+        let img = document.querySelector("img");
+        img.setAttribute(
+            "src",
+            "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/65/78ce0081ad11e681d7bb31b0a632ef/starry-night.jpg"
+        );
+        img.style.height = "200px";
+        img.style.width = "300px";
+
+        img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR2zNv_i9Tn5iB-AUNoj9q1EIU3azACT1WhgfOMNX75AqF8zgNKUesJCo6dVuQGLvRgw0&usqp=CAU";
+
+        //manipulating achor tag
+        let a = document.querySelector("a");
+        a.href = "https://google.com";
+        if (!window.location.href.includes("vscode-webview")) {
+            a.target = "_blank";
+        }
+
+        let div = document.querySelector("div");
+        div.title = "some info";
+
+        //removing disable attribute from a buttom
+        let btn = document.querySelector("button");
+        btn.removeAttribute("disabled");
     </script>
 </body>
+
 </html>
