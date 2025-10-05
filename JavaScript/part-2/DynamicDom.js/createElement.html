@@ -9,6 +9,9 @@
             height: 200px;
             width: 300px;
         }
+        .highlight{
+            color:red;
+        }
     </style>
     
 </head>
@@ -25,6 +28,9 @@
 
     <ul>
         <li>task 1</li>
+        <li>task 2</li>
+        <li>task 2</li>
+        <li>task 2</li>
         <li>task 2</li>
         <li>task 3</li>
     </ul>
@@ -47,7 +53,16 @@
         img.classList = "placeholder";
         document.querySelector("h1").prepend(img);
 
-        //select the first item of the list and delete it from the dom
+        // Task 4 - select the first item of the list and delete it from the dom
+        let firstli = document.querySelector("li");
+        ul.removeChild(firstli);
+
+        //task -5 add highlight to the everyeven element li of ul.
+        let n2Li = document.querySelectorAll("ul li:nth-child(2n)");
+        n2Li.forEach(function(elem){
+            elem.classList = "highlight";
+        });
+
     </script>
 </body>
 </html>
