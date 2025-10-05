@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>create elements</title>
+    <style>
+        .placeholder{
+            height: 200px;
+            width: 300px;
+        }
+    </style>
     
 </head>
 <body>
+
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id libero quam, perferendis aperiam, fugiat sapiente modi, inventore perspiciatis iste deleniti excepturi autem porro odit commodi. Perspiciatis ipsa numquam at?</p>
     
     <div>
         <h1>text 1</h1>
@@ -31,6 +40,14 @@
         let li = document.createElement("li");
         li.textContent = "hyy I'm new task";
         ul.appendChild(li);
+
+        //task 3- craete a new img element with placeholder source and add it on the top of H1 tag.
+        let img = document.createElement("img");
+        img.src = "https://miro.medium.com/v2/resize:fit:720/format:webp/1*ddnTDBOoRdfX8CLUctbuaw.png";
+        img.classList = "placeholder";
+        document.querySelector("h1").prepend(img);
+
+        //select the first item of the list and delete it from the dom
     </script>
 </body>
 </html>
