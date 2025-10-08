@@ -8,10 +8,15 @@ let p = document.querySelector("p");
 function yellow(){
     p.style.color = "yellow";
 };
-function red(){
+function red(){ 
     apple.style.color = "red";
 };
 
 // p.addEventListener("click",yellow);
 p.addEventListener("dblclick",red);
-// p.removeEventListener("dblclick", yellow);
+// p.removeEventListener("dblclick", yellow);   
+
+let input = document.querySelector("input");
+input.addEventListener("input", function(data){
+    console.log(data);
+});
