@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Listener</title>
+    <style>
+        h3{
+            text-transform: capitalize;
+        }
+    </style>
 </head>
 <body>
     <h2>apple</h2>
@@ -11,7 +16,18 @@
 
     <hr>
     <br>
+    <!-- for getting input -->
     <input type="text" placeholder="Name">
+    <hr><br>
+    <!-- for change event -->
+    <h3>Select your phone</h3>
+    <select name="phones" id="phones">
+        <option selected disabled>Select</option>
+        <option value="samsung">Samsung</option>
+        <option value="vivo">Vivo</option>
+        <option value="oppo">Oppo</option>
+        <option value="apple">Apple</option>
+    </select>
     <script src="event.js"></script>
 </body>
 </html>
