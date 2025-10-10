@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-    block-size : border_box;
+    box-sizing: border-box;
     font-family: "Helvetica Now Display";
 }
 html,body{
@@ -21,10 +21,7 @@ input{
 }
 
 #btn{
-    background: #65b3cb;
-    padding:12px 20px 10px;
-    border-radius:10px;
-    font-weight: 600;
+   
 }
 #btn:hover{
     background: #1d5a6c;
