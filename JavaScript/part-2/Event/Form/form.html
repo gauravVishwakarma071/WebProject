@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>submit</title>
+    <title>Form Example</title>
     <link rel="stylesheet" href="form.css">
 </head>
-
 <body>
     <div id="main">
-
-        <form action="">
+        <form id="myForm">
             <input type="text" placeholder="name">
             <input type="text" placeholder="age">
             <input type="text" placeholder="email">
             <input type="text" placeholder="profile pic">
-            <input type="submit">
+            <input type="submit" id="btn" value="Submit">
         </form>
-        </div>
-</body>
+    </div>
 
+    <!-- 👇 Make sure this line is at the END of body -->
+    <script src="form.js"></script>
+</body>
 </html>
