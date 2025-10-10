@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    block-size : border_box;
+    font-family: "Helvetica Now Display";
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    padding: 50px;
+    height: 100%;
+    width: 100%;
+    background: #555;
+}
+
+input{
+    display: block;
+}
+
+#btn{
+    background: #65b3cb;
+    padding:12px 20px 10px;
+    border-radius:10px;
+    font-weight: 600;
+}
+#btn:hover{
+    background: #1d5a6c;
+}
