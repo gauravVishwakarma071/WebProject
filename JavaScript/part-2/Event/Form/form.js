@@ -5,10 +5,15 @@ let inputs = document.querySelectorAll("input")
 form.addEventListener("submit", function (dets) {
     dets.preventDefault();
 
-    console.log(
-        inputs[0].value,
-        inputs[1].value,
-        inputs[2].value,
-        inputs[3].value,
+    let card = document.createElement("div");
+    card.classList.add("card");
+
+    let profile = document.createElement("div");
+    profile.classList.add("profile");
+
+    let img = document.createElement("img");
+    img.setAttribute(
+        "src",
+        "my_pic.jpeg"
     );
 });
