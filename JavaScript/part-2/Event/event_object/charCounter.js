@@ -2,8 +2,14 @@ let inp = document.querySelector("input");
 let sp = document.querySelector("span");
 
 inp.addEventListener("input", function(dets){
-    if(dets.key === " "){
-    }else{
-        sp.textContent = inp.value.length;
+    let left = 20 - inp.value.length;
+    sp.textContent = left;
+
+    if(left<0){
+        sp.style.color = "red";
     }
+    else{
+        sp.style.color = "black";
+    }
+
 });
