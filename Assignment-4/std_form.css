@@ -86,18 +86,25 @@ textarea:focus {
 
 /* 🧩 Buttons (centered text + better sizing) */
 button {
-  width: 110px;          /* wider for better look */
-  height: 38px;          /* consistent height */
+  width: 90px;          /* wider for better look */
+  height: 37px;          /* consistent height */
   background: #3b3b3b;
   border: none;
   color: #f1f1f1;
   font-weight: bold;
   border-radius: 8px;
+  padding-bottom: 5px;
+  margin-top: 15px;
   cursor: pointer;
   font-size: 0.95em;
   text-align: center;
   line-height: 38px;     /* centers text vertically */
   transition: all 0.3s ease;
+}
+
+/*margin*/
+button[type="submit"]{
+  margin-left: 30%;
 }
 
 /* Hover Effects */
