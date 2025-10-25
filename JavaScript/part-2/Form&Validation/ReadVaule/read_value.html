@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>READ VALUE</title>
+    <style>
+        input,textarea,select,small{
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        #hide{
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" id="name" placeholder="name">
-    <input type="email" id="email" placeholder="email">
-    <input type="password" id="password" placeholder="password">
+    <form id="userForm" autocomplete="on">
+    <input type="text" id="name" name="name" placeholder="Name" autocomplete="name">
+    <div id="hide">
+        <small> name should have more then 2 length</small>
+    </div>
+    <input type="email" id="email" name="email" placeholder="Email" autocomplete="email">
+    <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password">
 
-    <select name="gender" id="gender">
+    <select name="gender" id="gender" autocomplete="sex">
         <option value="male">male</option>
         <option value="female">female</option>
         <option value="others">others</option>
     </select>
-    <textarea name="bio" id="bio" placeholder="write about yourself.."></textarea>
+
+    <textarea name="bio" id="bio" placeholder="Write about yourself..." autocomplete="off"></textarea>
+
     <input type="submit">
+
+</form>
+
+    <script src="read_value.js"></script>
 </body>
 </html>
