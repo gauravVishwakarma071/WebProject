@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Registration Form</title>
   <link rel="stylesheet" href="std_form.css">
 </head>
+
 <body>
   <div class="container">
     <h2>Student Registration</h2>
     <hr>
     <form id="studentForm" action="std_form.php" method="POST">
-      
+
       <label>Full Name : </label>
       <input type="text" name="full_name" placeholder="Enter full name" required>
 
@@ -59,11 +61,14 @@
       <label>Address : </label>
       <textarea name="address" rows="3" placeholder="Permanent address..." required></textarea>
       <hr>
-      <button type="submit">Submit</button>
-      <button type="reset">Clear</button>
+      <div class="button-container">
+        <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
+      </div>
     </form>
   </div>
 
   <script src="std_form.js"></script>
 </body>
+
 </html>
