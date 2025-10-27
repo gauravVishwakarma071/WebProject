@@ -1,13 +1,12 @@
-let tm = setTimeout(function(){
-    console.log("hello")
-}, 5000);
+let count = 10;
 
-
-let Im = setInterval(function(){
-    console.log("JS timer");
-},3000);
-
-clearTimeout(tm);
-clearInterval(Im);
+let tm = setInterval(function () {
+    if (count >= 1) {
+        count--
+        console.log(count);
+    }else{
+        clearInterval(tm);
+    }
+}, 1000);
 
 
