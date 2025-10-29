@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Color Switcher Demo</title>
+  <style>
+    :root{
+      /* main customizable variables */
+      --bg: #ffffff;
+      --text: #111111;
+      --primary: #0077ff; /* accent */
+      --card: #f6f9ff;
+      --radius: 12px;
+      --transition: 300ms ease;
+    }
+
+    /* dark theme convenience class uses same variables but different defaults */
+    .dark {
+      --bg: #0f1115;
+      --text: #e8eef8;
+      --card: #13151a;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--bg) 92%, black 8%));
+      color: var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .app {
+      width:100%;
+      max-width:880px;
+      background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card) 92%, black 4%));
+      border-radius: var(--radius);
+      padding:28px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:16px;
+    }
+
+    h1{margin:0;font-size:1.25rem}
+    p.lead{margin:6px 0 0;color:color-mix(in srgb, var(--text) 75%, transparent)}
+
+    .controls {
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    /* nice button styles */
+    .btn {
+      appearance:none;
+      border: 0;
+      padding:10px 14px;
+      border-radius:10px;
+      background:transparent;
+      cursor:pointer;
+      font-weight:600;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+      outline: none;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04), inset 0 -6px 15px rgba(0,0,0,0.02);
+    }
+    .btn:active{ transform: translateY(1px) }
+    .btn:focus{ box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 18%, transparent) }
+
+    /* primary visual button */
+    .btn-primary{
+      background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary) 85%, black 8%));
+      color: white;
+      padding:10px 16px;
+    }
+
+    /* palette buttons (small circular swatches) */
+    .swatches { display:flex; gap:8px; align-items:center; }
+    .swatch {
+      width:36px; height:36px; border-radius:9px; border:2px solid rgba(0,0,0,0.06);
+      cursor:pointer; box-shadow:0 4px 10px rgba(2,6,23,0.06);
+      outline: none;
+    }
+    .swatch:focus { box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 18%, transparent) }
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 300px;
+      gap:18px;
+      align-items:start;
+    }
+
+    .content {
+      padding:8px 6px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--card) 96%, white 4%), var(--card));
+      padding:18px;
+      border-radius:12px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+      transition: background var(--transition);
+    }
+
+    footer { margin-top:14px; color:color-mix(in srgb, var(--text) 70%, transparent); font-size:0.9rem }
+
+    /* small utilities */
+    label { font-size:0.85rem; display:block; margin-bottom:6px; color:color-mix(in srgb, var(--text) 78%, transparent) }
+    input[type="color"]{
+      width:100%;
+      height:44px;
+      padding:3px;
+      border-radius:10px;
+      border:0;
+      cursor:pointer;
+      background:transparent;
+    }
+
+    /* responsive */
+    @media (max-width:720px){
+      main{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app" role="application" aria-label="Color switcher demo">
+    <header>
+      <div>
+        <h1>Color Switcher</h1>
+        <p class="lead">Click a swatch or pick a color to change the site's accent/background.</p>
+      </div>
+
+      <div class="controls" aria-hidden="false">
+        <button id="toggleDark" class="btn" aria-pressed="false" title="Toggle dark mode">Toggle Dark</button>
+        <button id="reset" class="btn" title="Reset to defaults">Reset</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="content">
+        <div class="card">
+          <h2 style="margin-top:0">Try it out</h2>
+          <p>This demo uses CSS variables. The <strong>accent / primary</strong> color changes the button and focus outlines; background/card subtleties are updated too for a cohesive look.</p>
+
+          <div style="margin-top:14px; display:flex; gap:10px; align-items:center;">
+            <button id="action" class="btn btn-primary" aria-label="Primary action">Primary Action</button>
+            <button id="cycle" class="btn" title="Cycle through palette">Cycle Color</button>
+          </div>
+
+          <footer>
+            <small>Preference persists using localStorage.</small>
+          </footer>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <label for="colorPicker">Pick a custom accent</label>
+          <input id="colorPicker" type="color" aria-label="Pick primary color" value="#0077ff">
+
+          <div style="height:12px"></div>
+
+          <label>Preset swatches</label>
+          <div class="swatches" role="list">
+            <!-- preset swatches (buttons) -->
+            <button class="swatch" data-color="#0077ff" style="background:#0077ff" aria-label="Blue swatch"></button>
+            <button class="swatch" data-color="#ff6b6b" style="background:#ff6b6b" aria-label="Red swatch"></button>
+            <button class="swatch" data-color="#16a34a" style="background:#16a34a" aria-label="Green swatch"></button>
+            <button class="swatch" data-color="#f59e0b" style="background:#f59e0b" aria-label="Amber swatch"></button>
+            <button class="swatch" data-color="#7c3aed" style="background:#7c3aed" aria-label="Purple swatch"></button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // === Simple, well-commented JS ===
+    const root = document.documentElement;
+    const colorPicker = document.getElementById('colorPicker');
+    const swatches = document.querySelectorAll('.swatch');
+    const resetBtn = document.getElementById('reset');
+    const toggleDarkBtn = document.getElementById('toggleDark');
+    const cycleBtn = document.getElementById('cycle');
+    const presetColors = Array.from(document.querySelectorAll('.swatch')).map(s => s.dataset.color);
+    let cycleIndex = 0;
+
+    // Apply color to CSS variable and adapt a couple of subtle derived things:
+    function applyPrimary(hex) {
+      if(!hex) return;
+      root.style.setProperty('--primary', hex);
+      // attempt to set a readable text color automatically for buttons (simple luminance test)
+      const rgb = hexToRgb(hex);
+      const luminance = (0.2126*rgb.r + 0.7152*rgb.g + 0.0722*rgb.b) / 255;
+      // if luminance is dark, make primary button text white; otherwise keep black-ish
+      document.querySelectorAll('.btn-primary').forEach(b=>{
+        b.style.color = (luminance < 0.5) ? '#fff' : '#111';
+      });
+      // Save preference
+      localStorage.setItem('site-primary', hex);
+    }
+
+    // hex -> {r,g,b}
+    function hexToRgb(hex){
+      const h = hex.replace('#','');
+      return {
+        r: parseInt(h.length===3? h.split('').map(c=>c+c).join(''): h.slice(0,2),16),
+        g: parseInt(h.length===3? h.split('').map(c=>c+c).join('').slice(2,4): h.slice(2,4),16),
+        b: parseInt(h.length===3? h.split('').map(c=>c+c).join('').slice(4,6): h.slice(4,6),16)
+      };
+    }
+
+    // load saved color
+    const saved = localStorage.getItem('site-primary');
+    if(saved){
+      colorPicker.value = saved;
+      applyPrimary(saved);
+    } else {
+      // ensure picker matches default
+      colorPicker.value = getComputedStyle(root).getPropertyValue('--primary').trim() || '#0077ff';
+    }
+
+    // color picker change
+    colorPicker.addEventListener('input', (e) => applyPrimary(e.target.value));
+
+    // swatch clicks
+    swatches.forEach(s => {
+      s.addEventListener('click', () => {
+        const c = s.dataset.color;
+        colorPicker.value = c;
+        applyPrimary(c);
+      });
+    });
+
+    // reset button - clears localStorage and resets variables to defaults
+    resetBtn.addEventListener('click', () => {
+      localStorage.removeItem('site-primary');
+      // remove inline style we've set on root for primary
+      root.style.removeProperty('--primary');
+      // reset color picker visually to default (reads from CSS fallback)
+      const defaultPrimary = '#0077ff';
+      colorPicker.value = defaultPrimary;
+      applyPrimary(defaultPrimary);
+      // also remove dark mode
+      document.documentElement.classList.remove('dark');
+      toggleDarkBtn.setAttribute('aria-pressed','false');
+    });
+
+    // dark mode toggle (just toggles .dark class that changes a few CSS vars)
+    toggleDarkBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      toggleDarkBtn.setAttribute('aria-pressed', String(isDark));
+      // store preference
+      if(isDark) localStorage.setItem('site-dark','1'); else localStorage.removeItem('site-dark');
+    });
+
+    // initialize dark from storage
+    if(localStorage.getItem('site-dark')) {
+      document.documentElement.classList.add('dark');
+      toggleDarkBtn.setAttribute('aria-pressed','true');
+    }
+
+    // cycle color button: cycles through presetColors
+    cycleBtn.addEventListener('click', () => {
+      cycleIndex = (cycleIndex + 1) % presetColors.length;
+      const next = presetColors[cycleIndex];
+      colorPicker.value = next;
+      applyPrimary(next);
+    });
+
+    // accessibility: allow Enter/Space to activate swatches nicely
+    swatches.forEach(s => {
+      s.tabIndex = 0;
+      s.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          s.click();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
