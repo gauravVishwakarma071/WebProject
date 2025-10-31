@@ -50,6 +50,7 @@ input::placeholder {
 
 /* Cards Container */
 .cards-container {
+<<<<<<< HEAD
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -59,6 +60,16 @@ input::placeholder {
 }
 
 /* Card */
+=======
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 50px;
+}
+
+
+>>>>>>> b928b3bb8fb6959d645d59612f919f09bc8cccee
 .card {
     position: relative;
     width: 200px;
