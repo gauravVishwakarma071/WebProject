@@ -19,4 +19,8 @@ if(mysqli_query($conn,$sql)){
 }else{
     die("Error creating database:" .mysqli_error($conn));
 }
+
+//Select the database
+mysqli_select_db($conn,$dbname);
+echo "Using database '$dbname'<br>";
 ?>
