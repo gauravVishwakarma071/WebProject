@@ -64,4 +64,15 @@ if(mysqli_query($conn, $sql)){
     die("Error while deleting data:" .mysqli_error($conn));
 }
 
+//Disconnect Database
+mysqli_close($conn);
+echo "Connection Closed<br>";
+
+//Connect again
+$conn = mysqli_connect($servername,$usernsme,$password);
+if($conn){
+    echo "Server connected..";
+}else{
+    die("Server connection failed")
+}
 ?>
