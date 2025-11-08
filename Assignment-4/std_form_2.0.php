@@ -75,4 +75,20 @@ if($conn){
 }else{
     die("Server connection failed")
 }
+
+//Delete the table
+$sql = "DROP TABLE IF EXISTS users";
+if(mysqli_query($conn, $sql)){
+    echo "Table deleted sucessfully<br>";
+}else{
+    die("Error while deleting table:" .mysqli_error($conn));
+}
+
+//Delete the database
+$sql = "DROP DATABASE IF EXISTS $dbname";
+if(mysqli_query($conn, $sql)){
+    echo "database deleted sucessfully<br>";
+}else{
+    die("Error while deleting database:" .mysqli_error($conn));
+}
 ?>
