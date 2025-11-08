@@ -25,7 +25,7 @@ mysqli_select_db($conn,$dbname);
 echo "Using database '$dbname'<br>";
 
 //Create table
-$sql = "CREATE TABLE IF NOT EXISTS user(
+$sql = "CREATE TABLE IF NOT EXISTS users(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 email VARCHAR(500) NOT NULL
@@ -45,8 +45,23 @@ VALUES
 if(mysqli_query($conn,$sql)){
     echo "Data inserted sucessfully<br>";
 }else{
-    die("Error inserting data" .mysqli_error($conn));
+    die("Error inserting data:" .mysqli_error($conn));
 }
 
+//Update some data
+$sql = "UPDATE users SET email = 'abc123@gmail.com' WHERE name = 'ABC'";
+if(mysqli_query($conn, $sql)){
+    echo "Data updated succesfully<br>";
+}else{
+    die("Error while updating data:" .mysqli_error($conn));
+}
+
+//Delete some data
+$sql = "DELETE FROM users WHERE name = 'ABC'";
+if(mysqli_query($conn, $sql)){
+    echo "Data deleted sucessfully<br>";
+}else{
+    die("Error while deleting data:" .mysqli_error($conn));
+}
 
 ?>
