@@ -17,3 +17,9 @@ var num = 6; do {
     num++;
 }
 while (num <= 5); 
+
+
+//Infinite Loop
+while (true) {     
+    console.log("This will run forever!"); 
+} 
