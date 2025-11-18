@@ -11,3 +11,12 @@ console.log(car.company);
 car.owner = "gaurav";
 
 console.log(car.owner);
+
+
+//Creating object by "new" keyword
+var person = new Object();
+person.naae("Guarva");
+person.age(23);
+person.course("MCA");
+
+console.log(person);
