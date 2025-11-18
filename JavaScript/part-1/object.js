@@ -1,9 +1,9 @@
 //An object is a collection of key–value pairs
 
 var car = {
-    company : "BMW",
-    model : "1945",
-    color : "Black"
+    company: "BMW",
+    model: "1945",
+    color: "Black"
 }
 
 console.log(car.company);
@@ -20,3 +20,7 @@ person.age(23);
 person.course("MCA");
 
 console.log(person);
+
+//Using Constructor Functions 
+function Student(name, age) { this.name = name; this.age = age; }
+var s1 = new Student("Gaurav", 22); 
